@@ -2,7 +2,6 @@
 #include "fsHelper.h"
 #include "nn/fs.h"
 #include "nn/init.h"
-#include "pe/DbgGui/DbgGui.h"
 
 namespace FsHelper {
     nn::Result writeFileToPath(void* buf, size_t size, const char* path) {
@@ -45,7 +44,6 @@ namespace FsHelper {
 
         long size = 0;
         nn::fs::GetFileSize(&size, handle);
-        loadData.buffer = pe::gui::getDbgGuiHeap()->tryAlloc(size, 4);
         loadData.bufSize = size;
 
         EXL_ASSERT(loadData.buffer, "Failed to Allocate Buffer! File Size: %ld", size);

@@ -4,16 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/src/**",
-                "/opt/devkitpro/devkitA64/aarch64-none-elf/include/**",
-                "/opt/devkitpro/libnx/include/**",
-                "${workspaceFolder}/lib/imgui/**",
-                "${workspaceFolder}/lib/sead/**",
-                "${workspaceFolder}/src/**",
                 "${workspaceFolder}/src/program/**",
                 "${workspaceFolder}/src/program/pe/**",
                 "${workspaceFolder}/src/nn/**",
                 "${workspaceFolder}/src/lib/**",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "/opt/devkitpro/devkitA64/aarch64-none-elf/include/**",
+                "/opt/devkitpro/libnx/include/**",
+                "${workspaceFolder}/lib/sead/**"
             ],
             "defines": [
                 "__aarch64__",
