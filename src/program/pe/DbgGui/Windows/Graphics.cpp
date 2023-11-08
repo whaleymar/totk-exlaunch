@@ -1,4 +1,6 @@
 #include "pe/DbgGui/Windows/Graphics.h"
+
+#include "lib.hpp"
 #include "heap/seadHeapMgr.h"
 #include "imgui.h"
 #include <sead/heap/seadHeap.h>
