@@ -4,8 +4,6 @@
 #include "nn/err.h"
 #include "nn/fs.h"
 
-#include "helpers.h"
-
 HOOK_DEFINE_TRAMPOLINE(MainInitHook) { static void Callback(); };
 
 void MainInitHook::Callback() {

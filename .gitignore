@@ -37,7 +37,9 @@ build/
 .idea/
 
 # temporary files
-
 flatbuffer_schems/
 flatbuffers/
 deploy/*
+
+# convenience scripts
+cleanBuild.sh
