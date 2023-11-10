@@ -1,4 +1,4 @@
-realloc = __main_start + 0x00754800;
-malloc = __main_start + 0x010d9760;
-free = __main_start + 0x0068dc40;
-calloc = __main_start + 0x00031bb0;
+realloc = __main_start + 0x001d6d30;
+malloc = __main_start + 0x001d6ca0;
+free = __main_start + 0x001d6cc0;
+calloc = __main_start + 0x001d6ce0;

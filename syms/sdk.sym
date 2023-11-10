@@ -1,2 +1,2 @@
-_ZN2nn2ro12LookupSymbolEPmPKc = __sdk_start + 0x0000000000135d10;
-_ZN2nn2fs19MountSdCardForDebugEPKc = __sdk_start + 0x00000000000dd800;
+_ZN2nn2ro12LookupSymbolEPmPKc = __sdk_start + 0x00363860;
+_ZN2nn2fs19MountSdCardForDebugEPKc = __sdk_start + 0x001f8af0;

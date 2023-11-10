@@ -4,6 +4,8 @@
 #include "nn/err.h"
 #include "nn/fs.h"
 
+#include "suika.hpp"
+
 HOOK_DEFINE_TRAMPOLINE(MainInitHook) { static void Callback(); };
 
 void MainInitHook::Callback() {
@@ -14,11 +16,9 @@ void MainInitHook::Callback() {
 
 extern "C" void exl_main(void* x0, void* x1) {
     exl::hook::Initialize();
-
-    using Patcher = exl::patch::CodePatcher;
-    using namespace exl::patch::inst;
-
     MainInitHook::InstallAtSymbol("nnMain");
+    
+    UnityRandomRange::InstallAtOffset(0x01903b70);
 }
 
 extern "C" NORETURN void exl_exception_entry() {
