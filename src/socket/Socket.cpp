@@ -1,4 +1,4 @@
-#include "Socket.h"
+#include "socket.hpp"
 #include "nifm.h"
 #include "nn/socket.h"
 #include <string>
@@ -95,23 +95,3 @@ void Socket::sendMessage(const char *message) {
         offset += sent;
     }
 }
-
-// const char *Socket::receiveMessage() {
-//     if (mState != SocketState::CONNECTED)
-//         return nullptr;
-
-//     std::string message;
-//     char buffer[PACKET_MAX_SIZE] = {};
-//     while (!message.ends_with('\n')) {
-//         if (nn::socket::Recv(mSocketFd, buffer, sizeof(buffer), 0) > 0) {
-//             message.append(buffer);
-//         } else {
-//             return nullptr;
-//         }
-//     }
-
-//     char* ptr = (char*)malloc(message.length() * sizeof(char));
-//     strcpy(ptr, message.c_str());
-
-//     return ptr;
-// }

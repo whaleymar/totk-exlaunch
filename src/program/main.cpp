@@ -4,29 +4,12 @@
 
 #include "nn/err.h"
 #include "nn/fs.h"
-
-#ifdef LOGGER_IP
-#include "log/logger.h"
-#include "socket/Socket.h"
-static Socket gSocket {};
-#endif
+#include "logger/logger.hpp"
 
 HOOK_DEFINE_TRAMPOLINE(MainInitHook) { static void Callback(); };
 
 void MainInitHook::Callback() {
     Orig();
-
-    #ifdef LOGGER_IP
-    if (gSocket.init(LOGGER_IP, LOGGER_PORT).isFailure()) {
-        Logger::log("Failed to connect to logging server!\n");
-    } else {
-        Logger::addListener([](const char* message) {
-            gSocket.sendMessage(message);
-        });
-        Logger::log("Connected to logging server!\n");
-    }
-    Logger::log(EXL_MODULE_NAME " Loaded!\n");
-    #endif
 
     R_ABORT_UNLESS(nn::fs::MountSdCardForDebug("sd").value);
 }
@@ -34,8 +17,12 @@ void MainInitHook::Callback() {
 extern "C" void exl_main(void* x0, void* x1) {
     exl::hook::Initialize();
 
-    using Patcher = exl::patch::CodePatcher;
-    using namespace exl::patch::inst;
+    // using Patcher = exl::patch::CodePatcher;
+    // using namespace exl::patch::inst;
+
+    #ifdef LOGGER_IP
+    // Logger::instance().init(LOGGER_IP, 3080);
+    #endif
 
     MainInitHook::InstallAtSymbol("nnMain");
 }

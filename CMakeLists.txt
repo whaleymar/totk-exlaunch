@@ -11,7 +11,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 if (LOGGER_IP)
   add_compile_definitions(LOGGER_IP="${LOGGER_IP}")
-  add_compile_definitions(LOGGER_PORT=${LOGGER_PORT})
   add_compile_definitions(private=public)
   add_compile_definitions(protected=public)
 endif ()
