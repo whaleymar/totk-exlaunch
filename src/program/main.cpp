@@ -40,7 +40,7 @@ extern "C" void exl_main(void* x0, void* x1) {
 
     MainInitHook::InstallAtSymbol("nnMain");
 
-    Patcher(0x00ebb0ec).BranchInst((void*)createRootHeap);
+    Patcher(0x00e9b824).BranchInst((void*)createRootHeap); // updated
 
     // imgui hooks
 

@@ -62,9 +62,9 @@ namespace gui {
         using Patcher = exl::patch::CodePatcher;
         using namespace exl::patch::inst;
 
-        Patcher(0x00A5ADDC).BranchLinkInst((void*)GraphicsHooks::PrePassLight);
-        Patcher(0x01279798).BranchLinkInst((void*)GraphicsHooks::AmbientOverrideBrightness);
-        Patcher(0x0096A528).BranchLinkInst((void*)GraphicsHooks::Fog);
+        Patcher(0x00a1e798).BranchLinkInst((void*)GraphicsHooks::PrePassLight); // updated
+        Patcher(0x0124c6ec).BranchLinkInst((void*)GraphicsHooks::AmbientOverrideBrightness); // updated
+        Patcher(0x00a9e0c0).BranchLinkInst((void*)GraphicsHooks::Fog); // updated
 
     }
 
@@ -78,9 +78,9 @@ namespace gui {
         if (getDbgGuiSharedData().showGraphics && ImGui::Begin("Graphics")) {
             ImGui::Checkbox("Pre-Pass Lights", &GraphicsHooks::sPrePassLightState);
             if (ImGui::Checkbox("Ultrahand Voxels", &GraphicsHooks::sUltraHandVoxel)) {
-                exl::patch::CodePatcher(0x0095D880).Write(0x940003DD);
+                exl::patch::CodePatcher(0x00be0fac).Write(0x940003DD); // updated 1st, not second
             } else {
-                exl::patch::CodePatcher(0x0095D880).WriteInst(exl::armv8::inst::Nop());
+                exl::patch::CodePatcher(0x00be0fac).WriteInst(exl::armv8::inst::Nop()); // updated
             }
 
             ImGui::Checkbox("Override Ambient Brightness", &GraphicsHooks::sAmbientOverrideBrightness);

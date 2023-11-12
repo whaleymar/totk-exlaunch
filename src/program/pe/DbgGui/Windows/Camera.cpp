@@ -161,8 +161,8 @@ namespace pe {
         }
 
         Camera::Camera() {
-            LayerCalc::InstallAtOffset(0x009451d0);
-            exl::patch::CodePatcher(0x00cdb894).BranchLinkInst((void*)disgustingCameraHook);
+            LayerCalc::InstallAtOffset(0x0094027c); // updated
+            exl::patch::CodePatcher(0x00c7de84).BranchLinkInst((void*)disgustingCameraHook); // updated
         }
 
         void Camera::update() {}
