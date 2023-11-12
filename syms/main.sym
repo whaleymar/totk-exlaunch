@@ -6,3 +6,14 @@ realloc = __main_start + 0x0070b610;
 malloc = __main_start + 0x010a6f50;
 free = __main_start + 0x006fda20;
 calloc = __main_start + 0x00031c10;
+
+_ZN4sead7HeapMgr12sInstancePtrE = __main_start + 0x0463bea0;
+_ZN4sead7HeapMgr10sRootHeapsE = __main_start + 0x0463be08;
+_ZN4sead9IDisposerD2Ev = __main_start + 0x01072870;
+_ZN4sead7HeapMgr15setCurrentHeap_EPNS_4HeapE = __main_start + 0x00e9b0c8;
+_ZNK4gsys12ModelSceneGI16drawLightPrePassEPN3agl11DrawContextEPNS_17ModelSceneContextERKNS_19RenderBufferContextE = __main_start + 0x00a2016c;
+_ZN2pe3gui22DisgustingLookAtCamera14doUpdateMatrixEPN4sead8Matrix34IfEE = __main_start + 0x00a15d40;
+_ZN4sead7ExpHeap9tryCreateEmRKNS_14SafeStringBaseIcEEPNS_4HeapEiNS5_13HeapDirectionEb = __main_start + 0x0086686c;
+__getreent = 334234234534534556; /* what the fuck is this */
+_ZN4sead9IDisposerC2EPNS_4HeapENS0_14HeapNullOptionE = __main_start + 0x00cf2d84;
+_ZN2nn3gfx6detail8GlslcDll11GetInstanceEv = __main_start + 0x00030d14;
