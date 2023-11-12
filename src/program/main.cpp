@@ -5,6 +5,7 @@
 #include "nn/err.h"
 #include "nn/fs.h"
 #include "logger/logger.hpp"
+#include "program/Actor/createActorHook.hpp"
 
 HOOK_DEFINE_TRAMPOLINE(MainInitHook) { static void Callback(); };
 
@@ -20,11 +21,13 @@ extern "C" void exl_main(void* x0, void* x1) {
     // using Patcher = exl::patch::CodePatcher;
     // using namespace exl::patch::inst;
 
+    MainInitHook::InstallAtSymbol("nnMain");
+
     #ifdef LOGGER_IP
     // Logger::instance().init(LOGGER_IP, 3080);
     #endif
 
-    MainInitHook::InstallAtSymbol("nnMain");
+    CreateActorHook::InstallAtOffset(0x00a5fdf8);
 }
 
 extern "C" NORETURN void exl_exception_entry() {
