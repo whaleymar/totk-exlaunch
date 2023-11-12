@@ -1,5 +1,7 @@
 #pragma once
 
+// stolen from https://github.com/CraftyBoss/SMO-Exlaunch-Base/tree/imgui
+
 #include "sead/heap/seadDisposer.h"
 #include "nn/result.h"
 
