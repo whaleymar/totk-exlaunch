@@ -11,9 +11,10 @@ set(CMAKE_CXX_STANDARD 23)
 
 if (LOGGER_IP)
   add_compile_definitions(LOGGER_IP="${LOGGER_IP}")
-  add_compile_definitions(private=public)
-  add_compile_definitions(protected=public)
 endif ()
+
+add_compile_definitions(private=public)
+add_compile_definitions(protected=public)
 
 ## Title Id
 set(TITLE_ID 0100F2C0115B6000)
