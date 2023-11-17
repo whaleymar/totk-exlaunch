@@ -5,6 +5,7 @@
 #include "nn/err.h"
 #include "nn/fs.h"
 #include "logger/logger.hpp"
+#include "sd/fs2sd.cpp"
 
 HOOK_DEFINE_TRAMPOLINE(MainInitHook) { static void Callback(); };
 
@@ -23,6 +24,8 @@ extern "C" void exl_main(void* x0, void* x1) {
     #ifdef LOGGER_IP
     // Logger::instance().init(LOGGER_IP, 3080);
     #endif
+
+    nn_fs_OpenFile_hook::InstallAtSymbol("_ZN2nn2fs8OpenFileEPNS0_10FileHandleEPKci");
 
     MainInitHook::InstallAtSymbol("nnMain");
 }

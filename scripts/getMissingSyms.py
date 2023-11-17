@@ -36,8 +36,10 @@ def main(outputString):
     for line in errorString.split('\n'):
         sym = parseLine(line)
         if sym:
-            # missingSyms.append(sym)
-            print(sym)
+            missingSyms.append(sym)
+    missingSyms = list(set(missingSyms))
+    for sym in missingSyms:
+        print(sym)
 
 if __name__ == "__main__":
     

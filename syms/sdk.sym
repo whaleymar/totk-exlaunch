@@ -1,5 +1,6 @@
 _ZN2nn2fs19MountSdCardForDebugEPKc = __sdk_start + 0xdd800;
 _ZN2nn2ro12LookupSymbolEPmPKc = __sdk_start + 0x135d10;
+_ZN2nn2fs11MountSdCardEPKc = __sdk_start + 0x000dd430;
 _ZN2nn3hid18InitializeKeyboardEv = __sdk_start + 0x49e700;
 _ZN2nn3hid16GetKeyboardStateEPNS0_13KeyboardStateE = __sdk_start + 0x49e730;
 _ZN2nn3hid15InitializeMouseEv = __sdk_start + 0x49e7d0;
@@ -31,3 +32,6 @@ _ZN2nn2fs11GetFileSizeEPlNS0_10FileHandleE = __sdk_start + 0x000000000009ca50;
 _ZN2nn2fs8ReadFileENS0_10FileHandleElPvm = __sdk_start + 0x000000000009c520;
 _ZN2nn4util9VSNPrintfEPcmPKcSt9__va_list = __sdk_start + 0x00084fc0;
 strstr = __sdk_start + 0x005a2740;
+_ZN2nn2fs15CreateDirectoryEPKc = __sdk_start + 0x0009d1c0;
+_ZN2nn4util8SNPrintfEPcmPKcz = __sdk_start + 0x000850a0;
+strncmp = __sdk_start + 0x005b8500;
